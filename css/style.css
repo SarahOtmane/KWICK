@@ -1,0 +1,461 @@
+@charset "UTF-8";
+/*-----------------------------------------------
+    
+       ********** Table of Contents **********
+
+01. =google fonts
+02. =variables
+03. =base
+
+        page1 : connexion/inscription
+
+04. =login
+05. =register
+
+        page2 : messagerie
+
+06. =header
+07. =
+08. =
+09. =
+10. =
+-----------------------------------------------*/
+
+
+
+/* ---------------------------- 
+        01 := google fonts 
+---------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
+
+
+/* ---------------------------- 
+        02 := variables
+---------------------------- */
+:root{
+    --bleu_fonce1: #23242a;
+    --bleu_fonce2: #28292d;
+    --bleu_transparent: ;
+    --noir: #1c1c1c;
+    --gris: #8f8f8f;
+    --vert_fuchsia: #45f3ff;
+}
+
+/* ---------------------------- 
+        03 := base
+---------------------------- */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
+.p_absolute{
+    position: absolute;
+}
+
+.p_relative{
+    position: relative;
+}
+
+.w_100{
+    width: 100%;
+}
+
+.w_max_content{
+    width: max-content;
+}
+
+.logo{
+    font-family: 'Nerko One', cursive;
+    font-size: 3em;
+    color: var(--vert_fuchsia);
+    margin-bottom: 50px;
+}
+
+*::-webkit-scrollbar {
+    width: 16px;
+    height: 5rem !important;
+}
+
+*{
+    scrollbar-width: auto;
+    scrollbar-color: var(--vert_fuchsia) var(--bleu_fonce1);
+}
+
+*::-webkit-scrollbar {
+    width: 16px;
+    height: 5rem !important;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--bleu_fonce1);
+    height: 5rem !important;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--vert_fuchsia);
+    border-radius: 10px;
+    height: 5rem !important;
+    border: 3px solid var(--bleu_fonce1);
+}
+
+/************************ PAGE 1 *************************/
+
+/* ---------------------------- 
+        03 := login
+---------------------------- */
+.container_login{
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--bleu_fonce1);
+}
+
+.box, .box::before, .box::after{
+    width: 400px;
+    height: 460px;
+}
+
+.box{
+    background-color: var(--noir);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.box::before, .box::after{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    background: linear-gradient(0deg, transparent, var(--vert_fuchsia), var(--vert_fuchsia));
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+}
+
+.box::after{
+    animation-delay: -3s;
+}
+
+
+@keyframes animate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.form{
+    background: var(--bleu_fonce2);
+    inset: 2px;
+    padding: 50px 40px;
+    border-radius: 8px;
+    z-index: 10;
+}
+
+.form_front{
+    padding: 70px 40px;
+}
+
+.form h2{
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: .1em;
+}
+
+.form h2, .inputBox input:valid ~ span, .inputBox input:focus ~ span, 
+.links a:hover, .links a:nth-child(2), header a:hover{
+    color: var(--vert_fuchsia);
+}
+
+.inputBox{
+    width: 300px;
+    margin-top: 35px;
+}
+
+.inputBox input{
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--bleu_fonce1);
+    padding: 20px 10px 10px;
+    font-size: 1em;
+    letter-spacing: .05em;
+    z-index: 10;
+}
+
+.inputBox span{
+    left: 0;
+    padding: 20px 0px 10px;
+    font-size: 1em;
+    color: var(--gris);
+    pointer-events: none;
+    letter-spacing: .05em;
+    transition: 0.5s;
+}
+
+.inputBox input:valid ~ span, .inputBox input:focus ~ span{
+    font-size: .75em;
+    transform: translateX(0px) translateY(-34px);
+}
+
+.inputBox i{
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    background: var(--vert_fuchsia);
+    border-radius: 4px;
+}
+
+.inputBox input:valid, .inputBox input:focus {
+    background-color: var(--vert_fuchsia);
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 4px;
+    transition: .5s;
+}
+
+.links{
+    justify-content: space-between;
+}
+
+.links a, .form_back a{
+    margin: 10px 0;
+    font-size: .75rem;
+    color: var(--gris);
+}
+
+.form button{
+    border: none;
+    outline: none;
+    background-color: var(--vert_fuchsia);
+    padding: 11px 25px;
+    margin-top: 10px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.form button:active{
+    opacity: .8;
+}
+
+
+/* ---------------------------- 
+        04 := register
+---------------------------- */
+.form_back{
+    visibility: hidden;
+}
+
+.form_back a{
+    margin-top: 35px;
+    color: var(--vert_fuchsia);
+}
+
+.form_back .inputBox{
+    margin-top: 20px;
+}
+
+
+
+
+/************************ PAGE 2 *************************/
+.container{
+    background-color: var(--bleu_fonce1);
+    min-height: 100vh;
+    padding: 1rem 5rem;
+}
+
+/* ---------------------------- 
+        05 := header
+---------------------------- */
+header{
+    align-items: center;
+    background-color: var(--bleu_fonce2);
+    padding: 1rem 3rem 1rem 2rem;
+    justify-content: space-between;
+}
+
+header .logo{
+    margin-bottom: 0;
+}
+
+header #conteneur_username{
+    color: white;
+    margin-left: 50%;
+}
+
+header button{
+    color: white;
+    background-color: transparent;
+    border: none;
+    font-size: 1rem;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+header button:hover{
+    color: var(--vert_fuchsia);
+}
+
+
+/* ---------------------------- 
+        05 := main
+---------------------------- */
+main{
+    margin-top: 50px;
+    justify-content: space-between;
+}
+
+.section1{
+    width: 20%;
+    background-color: var(--bleu_fonce2);
+    height: 72vh;
+    overflow-y: auto;
+    color: white;
+    padding-top: 1rem;
+    padding-left: 1rem;
+}
+
+.section1 ul{
+    list-style-type: none;
+    padding-left: .5rem;
+}
+
+.section2{
+    width: 75%;
+    height: 72vh;
+    background-color: var(--bleu_fonce2);
+    padding: 1rem;
+}
+
+.section2 div{
+    height: 57vh;
+    overflow-y: auto;
+}
+
+p.joined{
+    background-color: white;
+    padding: 1rem;
+    width: max-content;
+    border-radius: 2rem;
+    align-self: center;
+}
+
+.username_mess, .my_mess{
+    width: 45%;
+    height: max-content;
+    padding: 1rem 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.username_mess span, .my_mess span{
+    font-size: .8rem;
+}
+
+.username_mess p, .my_mess p{
+    width: 90%;
+    overflow-wrap: break-word;
+}
+
+.username_mess{
+    background-color: var(--vert_fuchsia);
+    color: var(--noir);
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+}
+
+.my_mess{
+    border: 1px solid var(--noir);
+    color: white;
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    align-self: flex-end;
+}
+
+.section2 form{
+    margin-top: 1.5rem;
+}
+
+.section2 form textarea{
+    width: 85%;
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    padding-left: 2rem;
+    padding-top: .5rem;
+}
+
+.section2 form button{
+    width: 15%;
+    background-color: var(--vert_fuchsia);
+    border: none;
+    font-weight: bolder;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    cursor: pointer;
+}
+
+/* ---------------------------- 
+        06 := media
+---------------------------- */
+@media screen and (max-width: 725px) {
+    .container{
+        padding: 1rem !important;
+    }
+
+    header{
+        padding: 1rem;
+    }
+
+    header .logo{
+        font-size: 1rem !important;
+    }
+
+    header #conteneur_username{
+        margin-left: 3rem !important;
+    }
+
+    main{
+        flex-direction: column !important;
+    } 
+
+    .section1{
+        flex-direction: row !important;
+        overflow-x: auto;
+        height: max-content;
+    }
+
+    .ul_user{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .section1, .section2{
+        width: 100%;
+    }
+
+    .username_mess, .my_mess{
+        width: 100%;
+    }
+}

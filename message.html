@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/message.js" defer></script>
+    <title>Kwick chat</title>
+</head>
+<body>
+    <div class="container column">
+        <header class="row w_100">
+            <span class="logo w_max_content">Kwick!</span>
+            <div class="row w_max_content" id="conteneur_username">
+            </div>
+            <button type="button" id="logout-test" class="w_max_content">Logout</button>
+        </header>
+        <main class="row">
+            <!-- debut de la section1 -->
+            <section class="section1 column">
+                <h2>People logged</h2>
+                <ul id="ul_user" class="column">
+                </ul>
+            </section>
+            <!-- fin de la section1 -->
+
+
+            <!-- debut de la section2 -->
+            <section class="section2 column">
+                <div class="column" id="conteneur_message">
+                    <!-- 
+                                        ce que doit contenir cette div
+                                        
+                        <p class="joined">username has joined the chat</p>
+                        <article class="username_mess column">
+                            <span>Username</span>
+                            <p>his message</p>
+                        </article>
+                        <article class="my_mess column"> 
+                            <span>My username</span>
+                            <p>my message</p>
+                        </article> 
+                    -->
+                </div>
+                <form action="#" class="row w_100">
+                    <textarea name="" id="textarea" placeholder="Entrez votre message"></textarea>
+                    <button type="button" id="send">Send</button>
+                </form>
+            </section>
+            <!-- fin de la section2 -->
+        </main>
+        <footer>
+
+        </footer>
+    </div>
+</body>
+</html>
